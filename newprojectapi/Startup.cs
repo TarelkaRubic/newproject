@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using newprojectapi.Contexts;
 using newprojectapi.Controllers;
 
 namespace newprojectapi
@@ -29,6 +30,12 @@ namespace newprojectapi
             services.AddDbContext<BudgetContext>(opt =>
             opt.UseInMemoryDatabase("Budget"));
             services.AddControllers();
+
+            services.AddDbContext<NoteContext>(opt =>
+            opt.UseInMemoryDatabase("Budget"));
+            services.AddControllers();
+            
+                
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
