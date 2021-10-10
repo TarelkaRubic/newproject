@@ -35,6 +35,8 @@ namespace newprojectapi
             opt.UseInMemoryDatabase("Budget"));
             services.AddControllers();
 
+            services.AddCors();
+
 
         }
 
@@ -45,6 +47,8 @@ namespace newprojectapi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(option => option.WithOrigins("http://localhost:8080").AllowAnyMethod());
 
             app.UseRouting();
 

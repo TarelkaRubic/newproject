@@ -80,13 +80,13 @@ namespace newprojectapi.Controllers
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
-            string login = user.login;
-            string password = user.password;
+            string Login = user.Login;
+            string Password = user.Password;
 
-           User find = _context.Users.FirstOrDefault(t => t.login == user);
+            User find = _context.Users.FirstOrDefault(t => t.Login == user.Login);
             if (find != default)
             {
-               if (find.password == user.password)
+               if (find.Password == user.Password)
                 {
                     return Ok();
                 }

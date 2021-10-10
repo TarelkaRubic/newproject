@@ -7,10 +7,10 @@ namespace newprojectapi.Models
 {
     public class User
     {
-        public string login { get; set; }
+        public string Login { get; set; }
         public int Id { get; set; }
-        public string password { get; set; }
-        public string mail { get; set; }
+        public string Password { get; set; }
+        public string Mail { get; set; }
         public Blob Avatar { get; set; }
     }
 }
